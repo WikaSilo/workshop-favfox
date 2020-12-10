@@ -16,6 +16,13 @@ Kalian bisa:
 - jalankan `npm install`
 - jalankan `node app.js`
 
+Link Dokumentasi:
+- node.js: https://nodejs.org/
+- express.js: https://expressjs.com/
+- template engine EJS: https://ejs.co/
+- random-fox: https://randomfox.ca/
+- bootstrap: https://getbootstrap.com/
+
 Selamat mencoba dan berexplorasi!
 
 @wikanyaa
