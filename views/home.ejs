@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+  <title>Demo - Express</title>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">FavFox</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/features">Features</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/pricing">Pricing</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="row">
+      <div class="bg-light p-4 m-4 text-center">
+        <h1>Hai, you!</h1>
+        <h4>Your Favotite Fox, is here!</h4>
+      </div>
+    </div>
+
+    <div class="row justify-content-center">
+      <form action="/" method="POST" class="col-6 justify-content-center m-4">
+        <div class="mb-3">
+          <label class="form-label">Fox Name:</label>
+          <input type="text" class="form-control" name="name">
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Fox Image (link):</label>
+          <input type="text" class="form-control" name="image">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+
+    <div class="row row-cols-1 row-cols-md-3 g-4 justify-content-center">
+
+      <% foxies.forEach(fox => { %>
+
+      <div class="col">
+        <div class="card">
+          <img src="<%= fox.image %>" class="card-img-top" alt="<%= fox.name %>">
+          <div class="card-body">
+            <h5 class="card-title"><%= fox.name %></h5>
+            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
+              content. This content is a little bit longer.</p>
+          </div>
+        </div>
+      </div>
+
+      <% }) %>
+
+    </div>
+  </div>
+
+</body>
+
+</html>
